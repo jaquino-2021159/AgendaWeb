@@ -1,0 +1,149 @@
+
+:root {
+    --color-primario: #1a1a2e;
+    --color-secundario: #16213e;
+    --color-acento: #0f4c75;
+    --color-acento-claro: #3282b8;
+    --color-fondo: #f8f9fa;
+    --color-texto: #2d3436;
+    --color-texto-claro: #636e72;
+    --color-blanco: #ffffff;
+    --color-gris: #dfe6e9;
+    --sombra-media: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #e8eef2;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23000000" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+    min-height: 100vh;
+    padding: 30px 20px 80px;
+    color: var(--color-texto);
+}
+
+
+nav {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--sombra-media);
+    overflow: hidden;
+}
+
+nav a {
+    flex: 1;
+    color: #b2bec3;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 18px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+
+.caja-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--color-blanco);
+    padding: 45px 50px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--sombra-media);
+    min-height: 400px;
+}
+
+h2 {
+    margin-bottom: 35px;
+    color: var(--color-primario);
+    font-size: 28px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-gris);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--color-acento);
+}
+
+/* este es para los campos para el nuevo contacto */
+input {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 10px 0;
+    border: 1px solid var(--color-gris);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 0 3px rgba(15, 76, 117, 0.08);
+}
+
+/* este es el estilo para el boton de guardar */
+.boton-general {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.boton-general:hover {
+    background-color: var(--color-acento-claro);
+    transform: translateY(-2px);
+}
+
+/* este es para el footer */
+.footer-agenda {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-primario);
+    color: #b2bec3;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 13px;
+}
+
+.footer-agenda strong {
+    color: var(--color-acento-claro);
+}
+
+/* para que sea ajuste a cualquier pantalla */
+@media (max-width: 768px) {
+    nav a { padding: 16px 10px; font-size: 13px; }
+    .caja-principal { padding: 30px 20px; }
+}
