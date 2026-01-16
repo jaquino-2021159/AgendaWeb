@@ -5,11 +5,13 @@
     --color-acento-claro: #3282b8;
     --color-fondo: #f8f9fa;
     --color-texto: #2d3436;
+    --color-texto-claro: #636e72;
     --color-blanco: #ffffff;
     --color-rojo: #d63031;
     --color-amarillo: #fdcb6e;
     --color-verde: #00b894;
     --color-gris: #dfe6e9;
+    --sombra-suave: 0 2px 10px rgba(0,0,0,0.08);
     --sombra-media: 0 4px 20px rgba(0,0,0,0.12);
 }
 
@@ -20,7 +22,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
     background-color: #e8eef2;
     background-image: 
         linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
@@ -36,19 +38,22 @@ nav {
     display: flex;
     justify-content: center;
     box-shadow: var(--sombra-media);
+    overflow: hidden;
 }
 
 nav a {
     flex: 1;
     color: #b2bec3;
     text-decoration: none;
+    font-weight: 500;
     padding: 18px 25px;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
     background-color: var(--color-secundario);
-    color: white;
+    color: var(--color-blanco);
 }
 
 .caja-principal {
@@ -90,70 +95,94 @@ h2::after {
 
 input, select {
     width: 100%;
-    padding: 14px;
+    padding: 14px 18px;
     margin: 10px 0;
     border: 1px solid var(--color-gris);
     border-radius: 6px;
-    font-size: 15px;
+    background-color: var(--color-fondo);
 }
 
 .boton-general {
     width: 100%;
-    padding: 14px;
+    padding: 14px 24px;
     background-color: var(--color-acento);
     color: white;
     border: none;
     border-radius: 6px;
-    font-weight: bold;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.lista-tareas {
-    list-style: none;
-}
-
-.lista-tareas li {
-    background: white;
+.lista-datos.lista-tareas li {
+    background: var(--color-blanco);
     margin-bottom: 12px;
-    padding: 20px;
+    padding: 20px 24px;
     border-radius: 8px;
     border: 1px solid var(--color-gris);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px 20px;
     align-items: center;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.lista-tareas li:hover {
-    transform: translateX(5px);
+/* Clases de prioridad que usa tu JS */
+.urgente { border-left: 5px solid var(--color-rojo) !important; }
+.normal { border-left: 5px solid var(--color-amarillo) !important; }
+.tranquilo { border-left: 5px solid var(--color-verde) !important; }
+
+/* Etiquetas automaticas basadas en la clase del li */
+.lista-tareas li.urgente::after {
+    content: '🔴 Urgente';
+    grid-column: 2; grid-row: 1;
+    background-color: var(--color-rojo);
+    color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 15px;
 }
 
-.lista-tareas li span {
+.lista-tareas li.normal::after {
+    content: '🟡 Normal';
+    grid-column: 2; grid-row: 1;
+    background-color: var(--color-amarillo);
+    color: var(--color-primario);
+    font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 15px;
+}
+
+.lista-tareas li.tranquilo::after {
+    content: '🟢 Tranquilo';
+    grid-column: 2; grid-row: 1;
+    background-color: var(--color-verde);
+    color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 15px;
+}
+
+.lista-datos.lista-tareas li span {
+    grid-column: 1;
+    grid-row: 1;
     font-size: 16px;
     font-weight: 500;
 }
 
-.urgente { border-left: 5px solid var(--color-rojo); }
-.normal { border-left: 5px solid var(--color-amarillo); }
-.tranquilo { border-left: 5px solid var(--color-verde); }
-
-.lista-tareas li div {
+.lista-datos.lista-tareas li div {
+    grid-column: 2;
+    grid-row: 2;
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
-.boton-amarillo { background-color: var(--color-amarillo); border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
-.boton-rojo { background-color: var(--color-rojo); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+.boton-amarillo { background-color: var(--color-amarillo); color: var(--color-primario); padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; }
+.boton-rojo { background-color: var(--color-rojo); color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; }
 
 .footer-agenda {
     position: fixed;
     bottom: 0; left: 0; right: 0;
     background-color: var(--color-primario);
-    color: white;
+    color: #b2bec3;
     text-align: center;
     padding: 15px;
-}
-
-@media (max-width: 768px) {
-    .caja-principal { padding: 30px 20px; }
 }
