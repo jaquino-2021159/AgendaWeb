@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Tareas</title>
+    <link rel="stylesheet" href="/style/pendientes.css">
+</head>
+<body>
+    <nav>
+        <a href="contactos.html">Contactos</a>
+        <a href="favoritos.html">Favoritos</a>
+        <a href="todo.html">Tareas</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <div class="caja-principal">
+        <h2>Lista de Pendientes</h2>
+        <div class="nueva-tarea-box">
+            <input type="text" id="texto-tarea" placeholder="¿Qué tienes pendiente?">
+            <select id="nivel-tarea">
+                <option value="1">Urgente</option>
+                <option value="2">Más o menos</option>
+                <option value="3">Tranquilo</option>
+            </select>
+            <button class="boton-general" onclick="añadirTarea()">Añadir a la lista</button>
+        </div>
+        <ul id="lista-tareas" class="lista-datos lista-tareas"></ul>
+    </div>
+
+    <footer class="footer-agenda">
+        <p>&copy; 2026 Realizado por <strong>Jorge Aquino - 2021159</strong></p>
+    </footer>
+
+    <script src="/js/todo.js"></script>
+</body>
+</html>
