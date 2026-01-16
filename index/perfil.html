@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="/style/perfil.css">
+</head>
+<body>
+    <nav>
+        <a href="contactos.html">Contactos</a>
+        <a href="favoritos.html">Favoritos</a>
+        <a href="todo.html">Tareas</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <div class="caja-principal">
+        <div class="detalle-contacto">
+            <div class="avatar-grande" style="background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);">👤</div>
+            <h3>Mi Perfil</h3>
+            <span class="grupo-badge">Usuario</span>
+
+            <ul class="info-contacto-lista">
+                <li>
+                    <strong>📧 Correo</strong>
+                    <span id="ver-correo">Cargando...</span>
+                </li>
+                <li>
+                    <strong>🔒 Contraseña</strong>
+                    <span id="ver-pass">••••••••</span>
+                </li>
+            </ul>
+
+            <div class="botones-accion">
+                <a href="index.html" onclick="localStorage.clear()" class="boton-general boton-rojo" style="text-decoration:none;">🚪 Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-agenda">
+        <p>&copy; 2026 Realizado por <strong>Jorge Aquino - 2021159</strong></p>
+    </footer>
+    
+    <script src="/js/sesion.js"></script>
+</body>
+</html>
