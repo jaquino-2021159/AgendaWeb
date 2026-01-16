@@ -1,0 +1,159 @@
+:root {
+    --color-primario: #1a1a2e;
+    --color-secundario: #16213e;
+    --color-acento: #0f4c75;
+    --color-acento-claro: #3282b8;
+    --color-fondo: #f8f9fa;
+    --color-texto: #2d3436;
+    --color-blanco: #ffffff;
+    --color-rojo: #d63031;
+    --color-amarillo: #fdcb6e;
+    --color-verde: #00b894;
+    --color-gris: #dfe6e9;
+    --sombra-media: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e8eef2;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23000000" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+    min-height: 100vh;
+    padding: 30px 20px 80px;
+}
+
+nav {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--sombra-media);
+}
+
+nav a {
+    flex: 1;
+    color: #b2bec3;
+    text-decoration: none;
+    padding: 18px 25px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+.caja-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--color-blanco);
+    padding: 45px 50px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--sombra-media);
+    min-height: 500px;
+}
+
+h2 {
+    margin-bottom: 35px;
+    color: var(--color-primario);
+    font-size: 28px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-gris);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--color-acento);
+}
+
+.nueva-tarea-box {
+    background: var(--color-fondo);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid var(--color-gris);
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid var(--color-gris);
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.boton-general {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lista-tareas {
+    list-style: none;
+}
+
+.lista-tareas li {
+    background: white;
+    margin-bottom: 12px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-gris);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.lista-tareas li:hover {
+    transform: translateX(5px);
+}
+
+.lista-tareas li span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.urgente { border-left: 5px solid var(--color-rojo); }
+.normal { border-left: 5px solid var(--color-amarillo); }
+.tranquilo { border-left: 5px solid var(--color-verde); }
+
+.lista-tareas li div {
+    display: flex;
+    gap: 10px;
+}
+
+.boton-amarillo { background-color: var(--color-amarillo); border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+.boton-rojo { background-color: var(--color-rojo); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+
+.footer-agenda {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .caja-principal { padding: 30px 20px; }
+}
