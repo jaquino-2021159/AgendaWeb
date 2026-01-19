@@ -152,6 +152,14 @@ h2::after {
     margin-bottom: 12px;
 }
 
+/* Variaciones de color para que cada contacto tenga un logo diferente */
+.lista-datos.lista-contactos li:nth-child(1) a::before { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+.lista-datos.lista-contactos li:nth-child(2) a::before { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.lista-datos.lista-contactos li:nth-child(3) a::before { background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+.lista-datos.lista-contactos li:nth-child(4) a::before { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+.lista-datos.lista-contactos li:nth-child(5) a::before { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+.lista-datos.lista-contactos li:nth-child(n+6) a::before { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
+
 /* este es footer fijo abajo */
 .footer-agenda {
     position: fixed;
