@@ -12,7 +12,7 @@ function iniciarSesion(evento) {
     localStorage.setItem('claveActiva', clavePuesta);
     
     // si todo sale bien lo mando directo a la pagina de mis contactos
-    window.location.href = "contactos.html";
+    window.location.href = "index/contactos.html";
 }
 
 // esta funcion es super importante porque revisa si el usuario de verdad entro
@@ -24,7 +24,7 @@ function verificarEstado() {
 
     // si veo que no hay usuario guardado y no esta en el login lo mando de regreso al inicio
     if (!usuario && !dondeEstoy.includes("index.html")) {
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     }
     
     // ahora si estoy en la pagina de perfil tengo que mostrar los datos que guarde
